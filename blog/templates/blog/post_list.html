@@ -1,0 +1,28 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+
+        <p class="text-right">
+        	<a href = "{% url "blog.views.post_new" %}" class="btn btn-info">새 글</a>
+        </p>
+		{% for post in post_list %}
+            <div class="post">
+                <div clas="date">
+                	{{ post.created_date }}
+                </div>
+                <h1>
+                	<a href="{% url "blog.views.post_detail" post.pk %}">{{ post.title }}</a>
+                </h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

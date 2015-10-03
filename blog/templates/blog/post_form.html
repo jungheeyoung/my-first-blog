@@ -1,0 +1,27 @@
+{% extends "blog/base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div class="content container">
+	<div class="row">
+		<div class="col-md-8">
+<form action="" method ="POST">
+	{%csrf_token%}
+
+	{% bootstrap_form form %}
+
+	{% comment %}
+	<!--
+	<table>
+		{{ form.as_table}}
+	</table>
+		-->
+	{% endcomment %}
+
+
+	<input type ="submit" class="btn btn-primary" />
+</form>
+</div>
+</div>
+</div>
+{% endblock %}

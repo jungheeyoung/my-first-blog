@@ -1,0 +1,18 @@
+{% extends "blog/base.html"%}
+
+{% block content %}
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+			<h1> {{ post.title}}</h1>
+
+   {{post.text|linebreaks }}
+
+<hr/>
+<a href = "{% url "blog.views.post_list"%}" class="btn btn-primary">목록보기</a>
+<a href = "{% url "blog.views.post_edit" post.pk %}" class="btn btn-default"> 수정</a>
+		</div>
+	</div>
+</div>
+{% endblock %}
